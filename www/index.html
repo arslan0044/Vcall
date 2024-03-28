@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Meta data for link fetching -->
+		<meta property="og:url" content="https://tlk.li" />
+		<meta property="og:image" content="https://tlk.li/og-image.png" />
+		<meta property="og:title" content="Citi Solution - group video call for the web" />
+		<meta
+			property="og:description"
+			content="A free, peer-to-peer, encrypted, open-source video calling for the web. No sign ups. No downloads."
+		/>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" href="/favicon.svg" />
+		<link rel="stylesheet" href="/home.css" />
+		<title>Citi Solution - group video call for the web</title>
+		<script defer src="/vue.global.prod.js"></script>
+		<script defer src="/home.js"></script>
+
+		<!-- ANALYTICS_SCRIPT -->
+	</head>
+
+	<body>
+		<main class="wrap">
+			<div id="app" class="row">
+				<h1 class="flex"><img src="favicon.svg" id="logo" /> Citi Solution</h1>
+
+				<div class="flex">
+					<div id="roomurl">
+						<input
+							type="text"
+							placeholder="room-name"
+							pattern="[a-zA-Z0-9]{8}"
+							v-model="roomId"
+							v-on:keydown.enter="goToRoom"
+						/>
+					</div>
+					<a v-bind:href="'/'+roomId" class="button">Start</a>
+				</div>
+
+				<p><a href="javascript:void(0)" v-on:click="generateRandomRoomId">Generate a random room</a></p>
+			</div>
+		</main>
+	</body>
+</html>
